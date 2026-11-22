@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07120f">
+<title>eFootball Arena 254 | Play. Compete. Win.</title>
+<style>
+:root{--bg:#07120f;--panel:#101f1a;--panel2:#142820;--green:#a7f34a;--mint:#42e6a4;--text:#f3f8f4;--muted:#9aada3;--line:#284238;--danger:#ff7777}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#18392b 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1160px;margin:auto;padding:0 22px}
+header{border-bottom:1px solid #20372d;background:#07120feF;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.4px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--mint));color:#07120f;display:grid;place-items:center;font-size:21px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:2px}
+nav{display:flex;gap:22px;color:#c0d0c7;font-size:14px}nav a:hover{color:var(--green)}.nav-actions{display:flex;gap:10px}
+button,.btn{border:0;border-radius:10px;padding:12px 17px;font-weight:800;cursor:pointer;font-size:13px}.primary{background:var(--green);color:#0b160e}.secondary{background:#1b3027;color:#eaf4ed;border:1px solid #355346}.ghost{background:transparent;border:1px solid #496457;color:#eaf4ed}
+.hero{padding:76px 0 54px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.eyebrow{color:var(--green);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.02;margin:17px 0}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);line-height:1.7;max-width:560px}.hero-buttons{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}.hero-card{min-height:330px;border:1px solid #315242;border-radius:24px;background:linear-gradient(145deg,#193d2d,#0d1c16 70%);padding:25px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}.hero-card:after{content:"⚽";position:absolute;font-size:220px;opacity:.08;right:-5px;top:35px;transform:rotate(-18deg)}.match-tag{background:#294d39;color:var(--green);padding:7px 11px;border-radius:20px;font-size:11px;font-weight:900;width:max-content}.versus{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;margin:20px 0}.team{text-align:center}.team-icon{width:76px;height:76px;border-radius:20px;background:#234936;border:1px solid #4d765c;display:grid;place-items:center;font-size:32px;margin:auto auto 9px}.vs{font-weight:1000;color:var(--green);font-size:22px}.hero-card .muted{color:var(--muted);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:12px 0 60px}.stat,.card{background:linear-gradient(145deg,#12241c,#0e1b16);border:1px solid var(--line);border-radius:16px;padding:20px}.stat strong{font-size:25px;display:block;color:var(--green)}.stat span{color:var(--muted);font-size:12px}
+section{padding:28px 0 54px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}.section-head h2{font-size:28px;margin:7px 0}.section-head p{color:var(--muted);font-size:13px;margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card h3{margin:10px 0 7px}.card p{color:var(--muted);font-size:13px;line-height:1.6}.icon{font-size:25px}.pill{display:inline-block;padding:5px 9px;border-radius:30px;background:#203b2d;color:var(--green);font-size:10px;font-weight:900;letter-spacing:.5px}
+.action-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.action-row button{flex:1}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:12px;color:#b9c9c0;margin:12px 0 6px}input,select{width:100%;padding:12px;border:1px solid #355346;border-radius:9px;background:#091610;color:white;outline:none}input:focus,select:focus{border-color:var(--green)}
+.notice{border:1px solid #66552c;background:#2b2514;color:#f3dda0;padding:13px 15px;border-radius:12px;font-size:12px;line-height:1.55;margin:18px 0}
+.list{display:grid;gap:10px}.list-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px;background:#0a1812;border:1px solid #263e32;border-radius:11px;font-size:13px}.list-item small{display:block;color:var(--muted);margin-top:4px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:10;place-items:center;padding:20px}.modal.open{display:grid}.modal-box{max-width:440px;width:100%;background:#102119;border:1px solid #3a5948;border-radius:18px;padding:24px}.modal-box h2{margin-top:0}.close{float:right;background:transparent;color:white;font-size:20px;padding:0}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#0b160e;padding:12px 18px;border-radius:10px;font-weight:800;font-size:13px;display:none;z-index:20}
+@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;padding-top:48px}.hero-card{min-height:280px}.grid3{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:14px}.stat strong{font-size:20px}}
+@media(max-width:480px){.nav{height:66px}.brand{font-size:13px}.nav-actions .ghost{display:none}.form-row{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:span 2}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span class="logo">⚽</span><span>eFOOTBALL ARENA 254<small>PLAY. COMPETE. WIN.</small></span></a>
+<nav><a href="#competitions">Competitions</a><a href="#how">How it works</a><a href="#leaderboard">Leaderboard</a></nav>
+<div class="nav-actions"><button class="ghost" onclick="openModal()">Log in</button><button class="primary" onclick="openModal()">Join free</button></div>
+</div></header>
+<main class="wrap">
+<div class="hero">
+<div><div class="eyebrow">Kenya's community gaming arena</div><h1>Bring your game.<br><span>Own the pitch.</span></h1><p>Find eFootball opponents, join community tournaments and climb the leaderboard. Start with free-to-play competitions while we build the arena.</p><div class="hero-buttons"><button class="primary" onclick="openModal()">CREATE FREE ACCOUNT →</button><a class="btn secondary" href="#competitions">Explore competitions</a></div></div>
+<div class="hero-card"><span class="match-tag">COMMUNITY MATCH • DEMO</span><div><div class="eyebrow">Next up: 1 vs 1</div><div class="versus"><div class="team"><div class="team-icon">🦁</div><b>NAIROBI FC</b></div><div class="vs">VS</div><div class="team"><div class="team-icon">⚡</div><b>RIFT VALLEY</b></div></div></div><div class="muted">Friendly match preview · Not a live fixture</div></div>
+</div>
+<div class="stats"><div class="stat"><strong>3</strong><span>Gaming platforms planned</span></div><div class="stat"><strong>1v1</strong><span>Head-to-head challenges</span></div><div class="stat"><strong>Free</strong><span>Prototype competitions</span></div></div>
+
+<section id="competitions"><div class="section-head"><div><div class="eyebrow">Choose your arena</div><h2>Competitions</h2><p>Join a free practice competition and earn demo points.</p></div><span class="pill">FREE PLAY PHASE</span></div>
+<div class="grid3">
+<div class="card"><div class="icon">📱</div><span class="pill">MOBILE</span><h3>eFootball Mobile</h3><p>Challenge mobile players and build your match record.</p><button class="secondary" onclick="joinCompetition('eFootball Mobile')">Join practice</button></div>
+<div class="card"><div class="icon">🎮</div><span class="pill">PLAYSTATION</span><h3>PlayStation Arena</h3><p>Find console opponents and compete in community events.</p><button class="secondary" onclick="joinCompetition('PlayStation')">Join practice</button></div>
+<div class="card"><div class="icon">🖥️</div><span class="pill">PC</span><h3>PC Arena</h3><p>Meet PC players and take part in organised fixtures.</p><button class="secondary" onclick="joinCompetition('PC')">Join practice</button></div>
+</div></section>
+
+<section id="how"><div class="section-head"><div><div class="eyebrow">Simple and fair</div><h2>How it works</h2><p>The first version focuses on community, fair play and verified results.</p></div></div>
+<div class="grid3"><div class="card"><div class="icon">①</div><h3>Create your profile</h3><p>Register with a username and choose your gaming platform.</p></div><div class="card"><div class="icon">②</div><h3>Find an opponent</h3><p>Use automatic matchmaking or send a direct challenge to another player.</p></div><div class="card"><div class="icon">③</div><h3>Play and report</h3><p>Play your match, submit the score and confirm the result with your opponent.</p></div></div>
+</section>
+
+<section><div class="section-head"><div><div class="eyebrow">Find your next match</div><h2>Matchmaking & challenges</h2><p>Interactive demo controls. Live player matching will be connected in a later development stage.</p></div></div>
+<div class="two-col">
+<div class="card"><h3>⚡ Automatic matchmaking</h3><p>Choose a platform and queue for a practice opponent.</p><label for="platform">Your platform</label><select id="platform"><option>eFootball Mobile</option><option>PlayStation</option><option>PC</option></select><div class="action-row"><button class="primary" onclick="findMatch()">Find opponent</button></div><div id="match-status" class="notice" style="display:none"></div></div>
+<div class="card"><h3>🤝 Challenge a player</h3><p>Send a practice challenge. Sample player names are placeholders.</p><label for="opponent">Choose opponent</label><select id="opponent"><option>KenyaStriker254</option><option>GoalMachine</option><option>RiftValleyPro</option></select><label for="challenge-platform">Platform</label><select id="challenge-platform"><option>eFootball Mobile</option><option>PlayStation</option><option>PC</option></select><div class="action-row"><button class="secondary" onclick="sendChallenge()">Send challenge</button></div></div>
+</div></section>
+
+<section id="leaderboard"><div class="section-head"><div><div class="eyebrow">Community standings</div><h2>Leaderboard</h2><p>Sample demo data — not real player rankings.</p></div></div>
+<div class="card list">
+<div class="list-item"><span>🥇 KenyaStriker254<small>Sample player</small></span><b>1,240 pts</b></div>
+<div class="list-item"><span>🥈 GoalMachine<small>Sample player</small></span><b>1,080 pts</b></div>
+<div class="list-item"><span>🥉 RiftValleyPro<small>Sample player</small></span><b>960 pts</b></div>
+<div id="your-rank" class="list-item" style="display:none"><span id="your-name">Your profile<small>New player</small></span><b>0 pts</b></div>
+</div></section>
+
+<div class="notice"><b>Prototype & safety notice:</b> This website is a demonstration only. It does not process deposits, hold funds, pay prizes, or provide live multiplayer matchmaking. Paid entry competitions and cash prizes will only be considered after the relevant Kenyan legal and licensing requirements, payment arrangements, age safeguards and dispute procedures have been confirmed.</div>
+</main>
+<footer><div class="wrap footer-inner"><div><b>eFOOTBALL ARENA 254</b><br>Play. Compete. Win.</div><div>© 2026 eFootball Arena 254 · Community prototype</div></div></footer>
+
+<div class="modal" id="register-modal"><div class="modal-box"><button class="close" onclick="closeModal()">✕</button><div class="eyebrow">Join the community</div><h2>Create your free profile</h2><p style="color:var(--muted);font-size:13px">This demo saves your profile only in this browser.</p>
+<form id="register-form" onsubmit="register(event)"><label>Display name</label><input id="name" required minlength="3" maxlength="24" placeholder="e.g. NairobiStriker"><label>Email (optional)</label><input id="email" type="email" placeholder="you@example.com"><label>Gaming platform</label><select id="reg-platform"><option>eFootball Mobile</option><option>PlayStation</option><option>PC</option></select><div class="action-row"><button class="primary" type="submit">Create free profile</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script>
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',3000)}
+function openModal(){document.getElementById('register-modal').classList.add('open')}
+function closeModal(){document.getElementById('register-modal').classList.remove('open')}
+function register(e){e.preventDefault();let p={name:document.getElementById('name').value.trim(),email:document.getElementById('email').value.trim(),platform:document.getElementById('reg-platform').value};localStorage.setItem('ea254_profile',JSON.stringify(p));document.getElementById('your-rank').style.display='flex';document.getElementById('your-name').innerHTML=p.name+'<small>'+p.platform+' · Your demo profile</small>';closeModal();toast('Welcome to the Arena, '+p.name+'!');}
+function joinCompetition(name){let p=localStorage.getItem('ea254_profile');if(!p){openModal();toast('Create a free profile to join.');return}toast('You joined the '+name+' practice list.');}
+function findMatch(){let p=localStorage.getItem('ea254_profile');if(!p){openModal();toast('Create a profile before matchmaking.');return}let s=document.getElementById('match-status');s.style.display='block';s.textContent='You are in the demo queue for '+document.getElementById('platform').value+'. Live opponent matching is not connected yet.';}
+function sendChallenge(){let p=localStorage.getItem('ea254_profile');if(!p){openModal();toast('Create a profile before sending challenges.');return}toast('Demo challenge prepared for '+document.getElementById('opponent').value+'. Live notifications are not connected yet.');}
+window.addEventListener('load',()=>{let p=localStorage.getItem('ea254_profile');if(p){try{p=JSON.parse(p);document.getElementById('your-rank').style.display='flex';document.getElementById('your-name').innerHTML=p.name+'<small>'+p.platform+' · Your demo profile</small>';}catch(e){}}});
+</script>
+</body></html>
